@@ -1,13 +1,14 @@
-class NoteModel {
-  String id;
-  String colorHex;
-  String title;
-  String content;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-  NoteModel({
-    required this.id,
-    required this.colorHex,
-    required this.title,
-    required this.content,
-  });
+part 'note_model.freezed.dart';
+
+@freezed
+class NoteModel with _$NoteModel {
+  const factory NoteModel({
+    required String id,
+    required String colorHex,
+    required String title,
+    required String content,
+  }) = _NoteModel;
 }

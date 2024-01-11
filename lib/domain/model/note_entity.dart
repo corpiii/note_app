@@ -1,13 +1,14 @@
-class NoteEntity {
-  String id;
-  String colorHex;
-  String title;
-  String content;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-  NoteEntity({
-    required this.id,
-    required this.colorHex,
-    required this.title,
-    required this.content,
-  });
+part 'note_entity.freezed.dart';
+
+@freezed
+class NoteEntity with _$NoteEntity {
+  const factory NoteEntity({
+    required String id,
+    required String colorHex,
+    required String title,
+    required String content
+  }) = _NoteEntity;
 }
