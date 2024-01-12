@@ -4,7 +4,7 @@ import 'package:note_app/domain/model/result.dart';
 import 'package:note_app/domain/translator/model_translator.dart';
 import 'package:note_app/domain/usecase/update_note_use_case/interface/update_note_use_case.dart';
 
-import '../../repository/note_updatable_repository.dart';
+import '../../repository/isp/note_updatable_repository.dart';
 
 class UpdateNoteUseCaseImpl implements UpdateNoteUseCase {
   final NoteUpdatableRepository _repository;

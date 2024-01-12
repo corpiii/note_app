@@ -3,9 +3,10 @@ import 'dart:async';
 import 'package:note_app/domain/model/note_entity.dart';
 import 'package:note_app/domain/model/note_model.dart';
 import 'package:note_app/domain/model/result.dart';
-import 'package:note_app/domain/repository/note_fetchable_repository.dart';
 import 'package:note_app/domain/translator/model_translator.dart';
 import 'package:note_app/domain/usecase/fetch_note_use_case/interface/fetch_note_use_case.dart';
+
+import '../../repository/isp/note_fetchable_repository.dart';
 
 class FetchNoteUseCaseImpl implements FetchNoteUseCase {
   final NoteFetchableRepository _repository;

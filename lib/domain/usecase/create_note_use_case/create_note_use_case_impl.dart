@@ -1,7 +1,7 @@
 import 'package:note_app/domain/model/note_entity.dart';
 import 'package:note_app/domain/model/note_model.dart';
 import 'package:note_app/domain/model/result.dart';
-import 'package:note_app/domain/repository/note_creatable_repository.dart';
+import 'package:note_app/domain/repository/isp/note_creatable_repository.dart';
 import 'package:note_app/domain/translator/model_translator.dart';
 import 'interface/create_note_use_case.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:note_app/domain/model/note_model.dart';
 import 'package:note_app/domain/model/result.dart';
-import 'package:note_app/domain/repository/note_creatable_repository.dart';
+import 'package:note_app/domain/repository/isp/note_creatable_repository.dart';
 import 'package:note_app/domain/usecase/create_note_use_case/create_note_use_case_impl.dart';
 
 import 'stub/note_creatable_repository_stub.dart';
