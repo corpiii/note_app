@@ -6,14 +6,15 @@ import 'package:note_app/domain/translator/model_translator.dart';
 void main() {
   test('translate NoteEntity to NoteModel is Success', () {
     // given
-    final dummyData = ['1', 'FFFFFF', 'title', 'content'];
+    final dummyData = ['1', 'FFFFFF', '000000', 'title', 'content'];
     final translator = ModelTranslator();
 
     final entity = NoteEntity(
       id: dummyData[0],
-      colorHex: dummyData[1],
-      title: dummyData[2],
-      content: dummyData[3],
+      backgroundColorHex: dummyData[1],
+      fontColorHex: dummyData[2],
+      title: dummyData[3],
+      content: dummyData[4],
     );
 
     // when
@@ -21,7 +22,8 @@ void main() {
 
     final result = [
       model.id,
-      model.colorHex,
+      model.backgroundColorHex,
+      model.fontColorHex,
       model.title,
       model.content
     ];
@@ -36,14 +38,15 @@ void main() {
 
   test('translate NoteModel to NoteEntity is Success', () {
     // given
-    final dummyData = ['2', '000000', 'title', 'content'];
+    final dummyData = ['2', '000000', 'FFFFFF', 'title', 'content'];
     final translator = ModelTranslator();
 
     final model = NoteModel(
       id: dummyData[0],
-      colorHex: dummyData[1],
-      title: dummyData[2],
-      content: dummyData[3],
+      backgroundColorHex: dummyData[1],
+      fontColorHex: dummyData[2],
+      title: dummyData[3],
+      content: dummyData[4],
     );
 
     // when
@@ -51,7 +54,8 @@ void main() {
 
     final result = [
       entity.id,
-      entity.colorHex,
+      entity.backgroundColorHex,
+      entity.fontColorHex,
       entity.title,
       entity.content
     ];
