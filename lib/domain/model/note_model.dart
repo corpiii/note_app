@@ -7,7 +7,8 @@ part 'note_model.freezed.dart';
 class NoteModel with _$NoteModel {
   const factory NoteModel({
     required String id,
-    required String colorHex,
+    required String backgroundColorHex,
+    required String fontColorHex,
     required String title,
     required String content,
   }) = _NoteModel;

@@ -7,7 +7,8 @@ part 'note_entity.freezed.dart';
 class NoteEntity with _$NoteEntity {
   const factory NoteEntity({
     required String id,
-    required String colorHex,
+    required String backgroundColorHex,
+    required String fontColorHex,
     required String title,
     required String content
   }) = _NoteEntity;
