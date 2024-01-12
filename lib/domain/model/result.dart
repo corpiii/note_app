@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 part 'result.freezed.dart';
 
 @freezed
-class Result<T> with _$Result<T> {
+sealed class Result<T> with _$Result<T> {
   const factory Result.success(T data) = Success;
   const factory Result.error(String message) = Error;
 }
