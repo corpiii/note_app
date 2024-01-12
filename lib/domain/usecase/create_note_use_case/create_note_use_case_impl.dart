@@ -13,7 +13,12 @@ class CreateNoteUseCaseImpl implements CreateNoteUseCase {
   }) : _repository = repository;
 
   @override
-  Future<Result<NoteModel>> execute(String backgroundColorHex, String fontColorHex, String title, String content) async {
+  Future<Result<NoteModel>> execute({
+    required String backgroundColorHex,
+    required String fontColorHex,
+    required String title,
+    required String content
+  }) async {
     final result = await _repository.create(
         backgroundColorHex: backgroundColorHex,
         fontColorHex: fontColorHex,
