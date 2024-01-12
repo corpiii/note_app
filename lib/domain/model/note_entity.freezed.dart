@@ -17,7 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NoteEntity {
   String get id => throw _privateConstructorUsedError;
-  String get colorHex => throw _privateConstructorUsedError;
+  String get backgroundColorHex => throw _privateConstructorUsedError;
+  String get fontColorHex => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
 
@@ -32,7 +33,12 @@ abstract class $NoteEntityCopyWith<$Res> {
           NoteEntity value, $Res Function(NoteEntity) then) =
       _$NoteEntityCopyWithImpl<$Res, NoteEntity>;
   @useResult
-  $Res call({String id, String colorHex, String title, String content});
+  $Res call(
+      {String id,
+      String backgroundColorHex,
+      String fontColorHex,
+      String title,
+      String content});
 }
 
 /// @nodoc
@@ -49,7 +55,8 @@ class _$NoteEntityCopyWithImpl<$Res, $Val extends NoteEntity>
   @override
   $Res call({
     Object? id = null,
-    Object? colorHex = null,
+    Object? backgroundColorHex = null,
+    Object? fontColorHex = null,
     Object? title = null,
     Object? content = null,
   }) {
@@ -58,9 +65,13 @@ class _$NoteEntityCopyWithImpl<$Res, $Val extends NoteEntity>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      colorHex: null == colorHex
-          ? _value.colorHex
-          : colorHex // ignore: cast_nullable_to_non_nullable
+      backgroundColorHex: null == backgroundColorHex
+          ? _value.backgroundColorHex
+          : backgroundColorHex // ignore: cast_nullable_to_non_nullable
+              as String,
+      fontColorHex: null == fontColorHex
+          ? _value.fontColorHex
+          : fontColorHex // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -82,7 +93,12 @@ abstract class _$$NoteEntityImplCopyWith<$Res>
       __$$NoteEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String colorHex, String title, String content});
+  $Res call(
+      {String id,
+      String backgroundColorHex,
+      String fontColorHex,
+      String title,
+      String content});
 }
 
 /// @nodoc
@@ -97,7 +113,8 @@ class __$$NoteEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? colorHex = null,
+    Object? backgroundColorHex = null,
+    Object? fontColorHex = null,
     Object? title = null,
     Object? content = null,
   }) {
@@ -106,9 +123,13 @@ class __$$NoteEntityImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      colorHex: null == colorHex
-          ? _value.colorHex
-          : colorHex // ignore: cast_nullable_to_non_nullable
+      backgroundColorHex: null == backgroundColorHex
+          ? _value.backgroundColorHex
+          : backgroundColorHex // ignore: cast_nullable_to_non_nullable
+              as String,
+      fontColorHex: null == fontColorHex
+          ? _value.fontColorHex
+          : fontColorHex // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -127,14 +148,17 @@ class __$$NoteEntityImplCopyWithImpl<$Res>
 class _$NoteEntityImpl with DiagnosticableTreeMixin implements _NoteEntity {
   const _$NoteEntityImpl(
       {required this.id,
-      required this.colorHex,
+      required this.backgroundColorHex,
+      required this.fontColorHex,
       required this.title,
       required this.content});
 
   @override
   final String id;
   @override
-  final String colorHex;
+  final String backgroundColorHex;
+  @override
+  final String fontColorHex;
   @override
   final String title;
   @override
@@ -142,7 +166,7 @@ class _$NoteEntityImpl with DiagnosticableTreeMixin implements _NoteEntity {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoteEntity(id: $id, colorHex: $colorHex, title: $title, content: $content)';
+    return 'NoteEntity(id: $id, backgroundColorHex: $backgroundColorHex, fontColorHex: $fontColorHex, title: $title, content: $content)';
   }
 
   @override
@@ -151,7 +175,8 @@ class _$NoteEntityImpl with DiagnosticableTreeMixin implements _NoteEntity {
     properties
       ..add(DiagnosticsProperty('type', 'NoteEntity'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('colorHex', colorHex))
+      ..add(DiagnosticsProperty('backgroundColorHex', backgroundColorHex))
+      ..add(DiagnosticsProperty('fontColorHex', fontColorHex))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('content', content));
   }
@@ -162,14 +187,17 @@ class _$NoteEntityImpl with DiagnosticableTreeMixin implements _NoteEntity {
         (other.runtimeType == runtimeType &&
             other is _$NoteEntityImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.colorHex, colorHex) ||
-                other.colorHex == colorHex) &&
+            (identical(other.backgroundColorHex, backgroundColorHex) ||
+                other.backgroundColorHex == backgroundColorHex) &&
+            (identical(other.fontColorHex, fontColorHex) ||
+                other.fontColorHex == fontColorHex) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.content, content) || other.content == content));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, colorHex, title, content);
+  int get hashCode => Object.hash(
+      runtimeType, id, backgroundColorHex, fontColorHex, title, content);
 
   @JsonKey(ignore: true)
   @override
@@ -181,14 +209,17 @@ class _$NoteEntityImpl with DiagnosticableTreeMixin implements _NoteEntity {
 abstract class _NoteEntity implements NoteEntity {
   const factory _NoteEntity(
       {required final String id,
-      required final String colorHex,
+      required final String backgroundColorHex,
+      required final String fontColorHex,
       required final String title,
       required final String content}) = _$NoteEntityImpl;
 
   @override
   String get id;
   @override
-  String get colorHex;
+  String get backgroundColorHex;
+  @override
+  String get fontColorHex;
   @override
   String get title;
   @override

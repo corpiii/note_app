@@ -7,7 +7,8 @@ class ModelTranslator implements Translator<NoteEntity, NoteModel> {
   NoteEntity translateFrom(NoteModel data) {
     return NoteEntity(
         id: data.id,
-        colorHex: data.colorHex,
+        backgroundColorHex: data.backgroundColorHex,
+        fontColorHex: data.fontColorHex,
         title: data.title,
         content: data.content
     );
@@ -17,7 +18,8 @@ class ModelTranslator implements Translator<NoteEntity, NoteModel> {
   NoteModel translateTo(NoteEntity data) {
     return NoteModel(
         id: data.id,
-        colorHex: data.colorHex,
+        backgroundColorHex: data.backgroundColorHex,
+        fontColorHex: data.fontColorHex,
         title: data.title,
         content: data.content
     );
