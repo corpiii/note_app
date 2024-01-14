@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:note_app/data/common/repository_error.dart';
 import 'package:note_app/data/hive_repository/dao/hive_note_dao.dart';
 import 'package:note_app/domain/model/note_entity.dart';
 import 'package:note_app/domain/model/result.dart';
 import 'package:note_app/domain/repository/note_repository.dart';
 
 class HiveRepository implements NoteRepository {
-  static final _boxName = 'noteBox';
+  static const _boxName = 'noteBox';
 
   final StreamController<Result<List<NoteEntity>>> _streamController = StreamController();
 
@@ -34,11 +35,15 @@ class HiveRepository implements NoteRepository {
   }
 
   @override
-  Future<Result<NoteEntity>> delete({required String id}) {}
+  Future<Result<NoteEntity>> delete({required String id}) {
+    throw UnimplementedError;
+  }
 
   @override
   void fetch() {}
 
   @override
-  Future<Result<NoteEntity>> update(NoteEntity entity) {}
+  Future<Result<NoteEntity>> update(NoteEntity entity) {
+    throw UnimplementedError;
+  }
 }

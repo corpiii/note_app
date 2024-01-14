@@ -26,7 +26,7 @@ void main() {
       case Success<NoteModel>():
         expect(result.data != null, true);
       case Error<NoteModel>():
-        Exception('error occured');
+        Exception('error occurred');
     }
   });
 }
