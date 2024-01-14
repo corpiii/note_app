@@ -30,7 +30,7 @@ class HiveRepository implements NoteRepository {
       await box.add(dao);
       return Result.success(entity);
     } catch (_) {
-      return Result.error('fail to create note');
+      return Result.error(RepositoryError.create.description);
     }
   }
 
