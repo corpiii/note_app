@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:note_app/data/hive_repository/dao/hive_note_dao.dart';
 
-void main() {
+
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(HiveNoteDAOAdapter());
   runApp(const MyApp());
 }
 
