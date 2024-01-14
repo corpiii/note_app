@@ -36,8 +36,6 @@ class HiveRepository implements NoteRepository {
 
       return Result.success(entity);
     } catch (_) {
-      // _streamController.add(Result.error(RepositoryError.fetch.description));
-
       return Result.error(RepositoryError.create.description);
     }
   }
@@ -83,8 +81,29 @@ class HiveRepository implements NoteRepository {
   }
 
   @override
-  Future<Result<NoteEntity>> update(NoteEntity entity) {
-    // todo
-    throw UnimplementedError;
+  Future<Result<NoteEntity>> update(NoteEntity entity) async {
+    try {
+      final box = await Hive.openBox<HiveNoteDAO>(_boxName);
+      final notes = box.values.toList();
+
+      for(int i = 0; i < notes.length; i++) {
+        final note = notes[i];
+
+        if (note.id == entity.id) {
+          final mapper = HiveNoteDAOMapper();
+
+          await box.deleteAt(i);
+          await box.add(mapper.mapperFrom(entity));
+
+          final resultList = box.values.map((e) => mapper.mapperTo(e)).toList();
+
+          _streamController.add(Result.success(resultList));
+          return Result.success(mapper.mapperTo(note));
+        }
+      }
+      return Result.error(RepositoryError.update.description);
+    } catch (error) {
+      return Result.error(RepositoryError.update.description);
+    }
   }
 }
