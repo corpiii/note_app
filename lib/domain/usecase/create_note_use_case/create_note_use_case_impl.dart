@@ -26,6 +26,7 @@ class CreateNoteUseCaseImpl implements CreateNoteUseCase {
       fontColorHex: fontColorHex,
       title: title,
       content: content,
+      timestamp: DateTime.now().toIso8601String(),
     );
 
     final result = await _repository.create(entity: entity);

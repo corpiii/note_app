@@ -15,6 +15,7 @@ void main() {
       fontColorHex: dummyData[2],
       title: dummyData[3],
       content: dummyData[4],
+      timestamp: dummyData[5],
     );
 
     // when
@@ -47,6 +48,7 @@ void main() {
       fontColorHex: dummyData[2],
       title: dummyData[3],
       content: dummyData[4],
+      timestamp: DateTime.parse(dummyData[5]),
     );
 
     // when

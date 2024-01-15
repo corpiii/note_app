@@ -21,6 +21,7 @@ mixin _$NoteModel {
   String get fontColorHex => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteModelCopyWith<NoteModel> get copyWith =>
@@ -37,7 +38,8 @@ abstract class $NoteModelCopyWith<$Res> {
       String backgroundColorHex,
       String fontColorHex,
       String title,
-      String content});
+      String content,
+      DateTime timestamp});
 }
 
 /// @nodoc
@@ -58,6 +60,7 @@ class _$NoteModelCopyWithImpl<$Res, $Val extends NoteModel>
     Object? fontColorHex = null,
     Object? title = null,
     Object? content = null,
+    Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,6 +83,10 @@ class _$NoteModelCopyWithImpl<$Res, $Val extends NoteModel>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -97,7 +104,8 @@ abstract class _$$NoteModelImplCopyWith<$Res>
       String backgroundColorHex,
       String fontColorHex,
       String title,
-      String content});
+      String content,
+      DateTime timestamp});
 }
 
 /// @nodoc
@@ -116,6 +124,7 @@ class __$$NoteModelImplCopyWithImpl<$Res>
     Object? fontColorHex = null,
     Object? title = null,
     Object? content = null,
+    Object? timestamp = null,
   }) {
     return _then(_$NoteModelImpl(
       id: null == id
@@ -138,6 +147,10 @@ class __$$NoteModelImplCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -150,7 +163,8 @@ class _$NoteModelImpl with DiagnosticableTreeMixin implements _NoteModel {
       required this.backgroundColorHex,
       required this.fontColorHex,
       required this.title,
-      required this.content});
+      required this.content,
+      required this.timestamp});
 
   @override
   final String id;
@@ -162,10 +176,12 @@ class _$NoteModelImpl with DiagnosticableTreeMixin implements _NoteModel {
   final String title;
   @override
   final String content;
+  @override
+  final DateTime timestamp;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoteModel(id: $id, backgroundColorHex: $backgroundColorHex, fontColorHex: $fontColorHex, title: $title, content: $content)';
+    return 'NoteModel(id: $id, backgroundColorHex: $backgroundColorHex, fontColorHex: $fontColorHex, title: $title, content: $content, timestamp: $timestamp)';
   }
 
   @override
@@ -177,7 +193,8 @@ class _$NoteModelImpl with DiagnosticableTreeMixin implements _NoteModel {
       ..add(DiagnosticsProperty('backgroundColorHex', backgroundColorHex))
       ..add(DiagnosticsProperty('fontColorHex', fontColorHex))
       ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('content', content));
+      ..add(DiagnosticsProperty('content', content))
+      ..add(DiagnosticsProperty('timestamp', timestamp));
   }
 
   @override
@@ -191,12 +208,14 @@ class _$NoteModelImpl with DiagnosticableTreeMixin implements _NoteModel {
             (identical(other.fontColorHex, fontColorHex) ||
                 other.fontColorHex == fontColorHex) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.content, content) || other.content == content));
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, backgroundColorHex, fontColorHex, title, content);
+  int get hashCode => Object.hash(runtimeType, id, backgroundColorHex,
+      fontColorHex, title, content, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -211,7 +230,8 @@ abstract class _NoteModel implements NoteModel {
       required final String backgroundColorHex,
       required final String fontColorHex,
       required final String title,
-      required final String content}) = _$NoteModelImpl;
+      required final String content,
+      required final DateTime timestamp}) = _$NoteModelImpl;
 
   @override
   String get id;
@@ -223,6 +243,8 @@ abstract class _NoteModel implements NoteModel {
   String get title;
   @override
   String get content;
+  @override
+  DateTime get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$NoteModelImplCopyWith<_$NoteModelImpl> get copyWith =>

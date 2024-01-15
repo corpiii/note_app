@@ -9,6 +9,7 @@ class HiveNoteDAO extends HiveObject {
   @HiveField(2) String fontColorHex;
   @HiveField(3) String title;
   @HiveField(4) String content;
+  @HiveField(5) String timestamp;
 
   HiveNoteDAO({
     required this.id,
@@ -16,5 +17,6 @@ class HiveNoteDAO extends HiveObject {
     required this.fontColorHex,
     required this.title,
     required this.content,
+    required this.timestamp,
   });
 }

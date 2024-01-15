@@ -25,7 +25,9 @@ class HiveRepository implements NoteRepository {
           backgroundColorHex: entity.backgroundColorHex,
           fontColorHex: entity.fontColorHex,
           title: entity.title,
-          content: entity.content);
+          content: entity.content,
+          timestamp: entity.timestamp,
+      );
 
       await box.add(dao);
 

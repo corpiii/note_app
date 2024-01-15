@@ -10,7 +10,8 @@ class ModelTranslator implements Translator<NoteEntity, NoteModel> {
         backgroundColorHex: data.backgroundColorHex,
         fontColorHex: data.fontColorHex,
         title: data.title,
-        content: data.content
+        content: data.content,
+        timestamp: data.timestamp.toIso8601String(),
     );
   }
 
@@ -21,7 +22,8 @@ class ModelTranslator implements Translator<NoteEntity, NoteModel> {
         backgroundColorHex: data.backgroundColorHex,
         fontColorHex: data.fontColorHex,
         title: data.title,
-        content: data.content
+        content: data.content,
+        timestamp: DateTime.parse(data.timestamp),
     );
   }
 }

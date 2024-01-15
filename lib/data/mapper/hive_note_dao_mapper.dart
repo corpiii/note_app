@@ -11,6 +11,7 @@ class HiveNoteDAOMapper implements EntityMapper<HiveNoteDAO> {
       fontColorHex: entity.fontColorHex,
       title: entity.title,
       content: entity.content,
+      timestamp: entity.timestamp,
     );
   }
 
@@ -22,6 +23,7 @@ class HiveNoteDAOMapper implements EntityMapper<HiveNoteDAO> {
       fontColorHex: data.fontColorHex,
       title: data.title,
       content: data.content,
+      timestamp: data.timestamp,
     );
   }
 }

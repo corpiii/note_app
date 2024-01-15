@@ -22,13 +22,14 @@ class HiveNoteDAOAdapter extends TypeAdapter<HiveNoteDAO> {
       fontColorHex: fields[2] as String,
       title: fields[3] as String,
       content: fields[4] as String,
+      timestamp: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, HiveNoteDAO obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class HiveNoteDAOAdapter extends TypeAdapter<HiveNoteDAO> {
       ..writeByte(3)
       ..write(obj.title)
       ..writeByte(4)
-      ..write(obj.content);
+      ..write(obj.content)
+      ..writeByte(5)
+      ..write(obj.timestamp);
   }
 
   @override

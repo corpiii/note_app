@@ -10,6 +10,7 @@ class NoteEntity with _$NoteEntity {
     required String backgroundColorHex,
     required String fontColorHex,
     required String title,
-    required String content
+    required String content,
+    required String timestamp,
   }) = _NoteEntity;
 }

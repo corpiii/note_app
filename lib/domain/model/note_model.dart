@@ -11,5 +11,6 @@ class NoteModel with _$NoteModel {
     required String fontColorHex,
     required String title,
     required String content,
+    required DateTime timestamp,
   }) = _NoteModel;
 }
