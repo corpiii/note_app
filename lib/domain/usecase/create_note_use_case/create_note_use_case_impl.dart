@@ -3,6 +3,7 @@ import 'package:note_app/domain/model/note_model.dart';
 import 'package:note_app/domain/model/result.dart';
 import 'package:note_app/domain/repository/isp/note_creatable_repository.dart';
 import 'package:note_app/domain/translator/model_translator.dart';
+import 'package:uuid/uuid.dart';
 import 'interface/create_note_use_case.dart';
 
 class CreateNoteUseCaseImpl implements CreateNoteUseCase {
@@ -19,12 +20,15 @@ class CreateNoteUseCaseImpl implements CreateNoteUseCase {
     required String title,
     required String content
   }) async {
-    final result = await _repository.create(
-        backgroundColorHex: backgroundColorHex,
-        fontColorHex: fontColorHex,
-        title: title,
-        content: content
+    final entity = NoteEntity(
+      id: const Uuid().v1(),
+      backgroundColorHex: backgroundColorHex,
+      fontColorHex: fontColorHex,
+      title: title,
+      content: content,
     );
+
+    final result = await _repository.create(entity: entity);
 
     switch (result) {
       case Success<NoteEntity>():

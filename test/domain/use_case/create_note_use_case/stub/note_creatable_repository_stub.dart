@@ -6,12 +6,7 @@ import '../../dummy/note_entity_list_dummy.dart';
 
 class NoteCreatableRepositoryStub implements NoteCreatableRepository {
   @override
-  Future<Result<NoteEntity>> create({
-    required String backgroundColorHex,
-    required String fontColorHex,
-    required String title,
-    required String content
-  }) async {
+  Future<Result<NoteEntity>> create({required NoteEntity entity,}) async {
     return Result.success(NoteEntityDummy.data[0]);
   }
 }
